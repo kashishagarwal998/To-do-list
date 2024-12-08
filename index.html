@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO List</title>
+    <style>
+
+         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+       
+        .main {
+            background-color:peachpuff;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height:100%;
+   
+        }
+
+    
+        h2 {
+            text-align: center;
+            color:indianred;
+            margin-bottom: 20px;
+           
+            font-weight: 700;
+        }
+
+      
+        .task-input-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        #taskInput {
+            height:20px;
+            width: 80%;
+            padding: 12px 15px;
+            border: 2px solid indianred;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+           
+            
+        }
+
+        #taskInput:focus {
+            border-color: #4caf50;
+        }
+
+        #addtask {
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            /* padding: 12px 20px; */
+            width:60px;
+            
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+           
+        }
+
+        #addtask:hover {
+            background-color: #45a049;
+        }
+
+  
+        .container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .task {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .task:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-text {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .main {
+                padding: 20px;
+            }
+
+            #taskInput {
+                width: 70%;
+            }
+
+            #addtask {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2>TO DO List<i class="fa-solid fa-list" style="margin-left: 15px; color:crimson; font-size: x-large;"></i></h2>
+        
+       
+        <div class="task-input-container">
+            <input type="text" id="taskInput" placeholder="Enter new task...">
+            <button id="addtask" onclick="addtask()">Add</button>
+        </div>
+        
+       
+        <div class="container" id="taskList"></div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
